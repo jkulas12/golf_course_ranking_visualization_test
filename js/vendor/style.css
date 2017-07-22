@@ -1,0 +1,680 @@
+.course, .architect {
+    list-style: none;
+    padding: 2px 0px;
+}
+#main {
+    position:relative;
+}
+#tlyPageGuideMessages {
+    width: 50%;
+    left: 20%;
+}
+#chart {
+    position:absolute;
+    width:100%;
+    float:left;
+
+}
+
+#coursePictureDiv {
+    width: 100%;
+    height:20%;
+    border:1px solid black;
+    position: absolute;
+    background: white;
+}
+
+
+#publicSelectDiv {
+    width: 50px;
+    height: 17px;
+    /*background: #ddd;*/
+    position: relative;
+    margin-left:3px;
+
+}
+
+#publicSelectDiv > input {
+    position: absolute;
+    left:0;
+    width:10px;
+    height:10px;
+}
+
+
+#publicSelectDiv label {
+    left:0;
+    top:0;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    background: repeating-linear-gradient(-45deg, #008837, #008837 2px, black 2px, black 4px);
+
+}
+
+#publicSelectDiv input[type=checkbox]:checked + label {
+    background: #008837;
+}
+
+#privateSelectDiv {
+    width: 50px;
+    height: 17px;
+    position: relative;
+    margin-top: 3px;
+    margin-left : 3px;
+    margin-bottom:3px;
+}
+#privateSelectDiv > input {
+    position: absolute;
+    left: 0;
+    width:10px;
+    height:10px;
+}
+
+#privateSelectDiv label {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    z-index: 1;
+    background: repeating-linear-gradient(-45deg, #a6611a, #a6611a 2px, black 2px, black 4px);
+}
+
+#privateSelectDiv input[type=checkbox]:checked + label {
+    background: #a6611a;
+}
+
+.courseTypeTextDiv {
+    font-size: 13px;
+    margin-left: 20px;
+    margin-bottom: 3px;
+}
+
+
+.courseInformationContainer > ul {
+    list-style: none;
+}
+
+#sliderLabel {
+    text-align: center;
+    width:130px;
+}
+
+
+.courseInfoContainer {
+    width : 200px;
+    height: 70px;
+}
+.courseInfoContainer > h3 {
+    width: 280px;
+}
+
+.coursePicContainer {
+    width : 45%;
+    height: 100%;
+}
+
+.coursePicInfoContainer {
+    display: flex;
+    height:70px;
+
+}
+
+.courseLogo {
+    width: 120px;
+    height:100%;
+}
+
+.coursePic {
+    width:100%;
+    height: 100%;
+}
+
+.courseInformationContainer {
+    height:210px;
+    background-color: white;
+    position:absolute;
+    border:solid 1px #000000;
+    border-radius: 10px;
+    width:300px;
+    display:block;
+    text-align:center;
+    list-style: none;
+    top: 130px;
+}
+
+.search {
+    z-index: 11;
+    position: relative;
+    width:300px;
+    float: left;
+    height:15%;
+    background-color: #f6f6f6;
+    top: 85%;
+    border: solid 1px #333333;
+    border-radius: 3px;
+    overflow-y: scroll;
+}
+.courseList {
+    overflow-y: auto;
+}
+#chart > svg {
+    background-color: white;
+    height:100%;
+
+}
+
+#courseList .ui-selected {
+    font-weight:bold;
+}
+
+.architect {
+    margin-right:5px;
+}
+
+
+.courseList, .architectList {
+    padding-bottom: 10px;
+
+}
+#showCourseTextDiv {
+    width:100%;
+    height:100%;
+    top:0;
+    position: absolute;
+}
+html,body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+.container {
+    width : 300px;
+    position: relative;
+    z-index: 10;
+}
+.container-left {
+ float:left;
+    height:100%;
+}
+.container-right {
+    float:right;
+    height:100%;
+    margin-right:5px;
+    overflow-y: hidden;
+}
+
+#mapContainer {
+    z-index: 0;
+    position:absolute;
+}
+#map {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.headingDiv {
+    text-align: center;
+    /*background-color: #4a873a;*/
+    background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#97bf8b, #b6dbab, #97bf8b); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#97bf8b, #b6dbab, #97bf8b);/* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#97bf8b, #b6dbab, #97bf8b); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#97bf8b, #b6dbab, #97bf8b); /* Standard syntax */
+}
+
+
+
+.courseInfoHeader{
+    margin-top:0px;
+    margin-bottom: 5px;
+    border: solid 1px #333333;
+    border-radius: 3px;
+    height:20px;
+    top:0;
+    font-size : 15px;
+    font-weight : bold;
+}
+
+.recentRankingsHeader {
+    margin-top:0px;
+    margin-bottom: 1px;
+    border: solid 1px #333333;
+    border-radius: 3px;
+    height:15px;
+    top:0;
+}
+.reproject {
+    position: absolute;
+    z-index: 99;
+    left: 50px;
+    top: 250px;
+}
+
+.checkText:checked + label:after {
+    background-color: green;
+}
+
+.metro {
+    stroke: black;
+    stroke-width: 1;
+    fill-opacity:0.5;
+}
+
+.private-rankings-div, .public-rankings-div {
+    height:30%;
+}
+.infoH {
+    margin-top: 3px;
+    margin-bottom:3px;
+    text-align: left;
+}
+
+.recentRankings-ul {
+    list-style: none;
+    text-align: left;
+    font-size: 13px;
+    padding-left: 2px;
+    height: 50px;
+    overflow-y: auto;
+}
+.point {
+    pointer-events: all;
+    stroke: black;
+    stroke-width: 1px;
+}
+.markerButton {
+    position: fixed;
+    top: 20px;
+    cursor: pointer;
+    z-index: 99;
+}
+#map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+div.d3MapModal {
+    display: none;
+    background: rgba(38,38,38,1);
+    border:solid 1px #a6a6a6;
+    border-radius: 10px;
+}
+
+
+svg {
+    position: relative;
+}
+
+
+
+h3 {
+    font-size:13px;
+}
+h2 {
+    font-size:13px;
+    margin:0;
+    padding: 2px 6px;
+    font-variant:small-caps;
+
+}
+.control-right {
+    z-index: 10;
+    position: relative;
+    display: block;
+    background-color: #f7f7f7;
+    border: solid 1px #333333;
+    border-radius: 3px;
+    height: 100%;
+}
+.control-left {
+    z-index: 10;
+    position: relative;
+    display: block;
+    background-color: #f7f7f7;
+    border: solid 1px #333333;
+    border-radius: 3px;
+    height: 60%;
+}
+.heading {
+    box-shadow: inset 0 0 10px rgba(0,0,0,.5);
+}
+
+
+.control.control-left {
+    float: left;
+    top: 0;
+}
+
+li.course span:first-child {
+    margin-right: 6px;
+    border: 1px solid green;
+    border-radius:5px;
+    padding: 0 2px;
+}
+#rankings > ul {
+    padding: 0 6px;
+    padding-bottom: 15px;
+    font-size: 13px;
+    margin-top:1px;
+    overflow-x: auto;
+    height:99%;
+}
+
+.architectList {
+    font-size: 13px;
+    margin-top: 1px;
+    height: 80px;
+    overflow-y: auto;
+    padding: 0 6px;
+    margin-bottom: 3px;
+
+}
+
+
+#courses > ul {
+    padding: 0 6px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    margin-top:1px;
+    overflow-y: auto;
+    height: 100%;
+}
+
+
+.control.control-right {
+    float: right;
+    top: 0;
+    height : 100%;
+}
+#architects {
+    width: 250px;
+    height: 15%;
+
+}
+
+.btn.btn-filter.btn-sm {
+    width: 50%;
+    background: #c2c2c2;
+    color: #333;
+    font-size: 14px;
+}
+
+.btn.btn-filter.btn-sm.active {
+    color: #f7f7f7;
+}
+
+.rankingButton {
+    width:75px;
+}
+
+.btn-filter span {
+    margin-right: 14px;
+    margin-top: 4px;
+}
+
+#filterButtonGroup {
+    width: 100%;
+}
+
+#allCoursesDiv {
+    border: solid 1px #333333;
+    border-radius: 3px;
+}
+
+#publicButton.active {
+    background: #b08d93;
+}
+
+#privateButton.active {
+    background: #7a90b0;
+}
+
+#rankingHeader {
+    width:100%;
+    margin-right: 0;
+    display: inline-block;
+    text-align: center;
+    font-size: 18px;
+}
+
+#specificRankingDiv {
+    border: solid 1px #333333;
+    border-radius: 3px;
+}
+
+#specificRankingHeader {
+    width:100%;
+    text-align: center;
+    font-size: 18px;
+}
+#rankingCourseSelectDiv {
+    width:280px;
+    height:30%;
+    position:relative;
+    z-index: 100;
+}
+#pickRankingButton {
+    width:100%;
+}
+#courses {
+    width:250px;
+    height:30%;
+    position:relative;
+}
+#showAllButton {
+    width:100%;
+}
+
+.cInfo {
+    margin-top:3px;
+    margin-bottom:3px;
+}
+#slider {
+    margin-left: 10px;
+}
+path {
+    fill-opacity: .7;
+    stroke-width: 2px;
+}
+.line > path {
+    fill-opacity: 0;
+}
+.rankingSelectionButton {
+    width:49%;
+    height: 40px;
+}
+
+.dropdown-toggle {
+    height:40px;
+}
+
+#publicationButton {
+    width:100px;
+}
+#typeButton {
+    width:65px;
+}
+#yearButton {
+    width:65px
+}
+#mapTitleDiv {
+    text-align: center;
+    z-index: 10;
+    position:relative;
+}
+
+#mapTitle {
+    background-color: lightgrey;
+    width:140px;
+    left:50%;
+    height:30px;
+    position:absolute;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.yearSpan {
+    margin-right: 30px;
+}
+.pubSpan {
+    float:left;
+    width:100px;
+    text-align: left;
+}
+#bringBackCoursesDiv {
+    position:absolute;
+    left:315px;
+    border:1px solid black;
+}
+
+.recentRankingsListHeader {
+    width: 100%;
+    height:20px;
+}
+.recentRankingsListHeader > span {
+    float: left;
+}
+
+.selectDiv {
+    display: inline-block;
+    text-align: center;
+    float:left;
+}
+.checkText {
+    font-size: 11px;
+    margin-right: 3px;
+}
+#pubSelectDiv {
+    margin-right:10px;
+}
+
+.tooltip {
+    top:0;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    pointer-events: none;
+    z-index: 10;
+    background-color:lightgrey;
+}
+
+.rankTooltip {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    pointer-events: none;
+    z-index: 10;
+    background-color:lightgrey;
+    font-size: 12px;
+    top: 0;
+}
+
+#chartSVG {
+    border: 1px solid black;
+}
+
+.chartTooltip {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    position: absolute;
+    width: 40px;
+    height: 34px;
+    pointer-events: none;
+    z-index: 10;
+    background-color:lightgrey;
+    font-size: 12px;
+    top:0;
+
+}
+
+.course {
+    width:94%;
+    list-style-type: disc;
+}
+
+#sliderDiv {
+    margin-top: 5px;
+    display: inline-block;
+}
+
+
+
+.courseList .ui-selecting, .architectList .ui-selecting { background: #FECA40; }
+.courseList .ui-selected, .architectList .ui-selected {background: lightblue  }
+
+#selectable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+#selectable li { margin: 3px; padding: 0.4em; font-size: 1.4em; height: 18px; }
+
+.active {
+    opacity: 1;
+}
+.inactive {
+    opacity: .3;
+}
+
+.rankSpan {
+    margin-right: 5px;
+}
+.rankContainer {
+    height: 50px;
+}
+
+.rankingTextDiv {
+    width: 30px;
+    height: 50%;
+}
+
+.rankContainer {
+    display: flex;
+}
+
+.coursesContainer {
+    width : 160px;
+}
+
+.rankingRect.unselected {
+    /*opacity:.5;*/
+    /*background: repeating-linear-gradient(*/
+            /*45deg,*/
+            /*#606dbc,*/
+            /*#606dbc 10px,*/
+            /*#465298 10px,*/
+            /*#465298 20px*/
+    /*);*/
+}
+.rankingRect.selected {
+    opacity: 1;
+}
+
+.pubTextContainer {
+    margin-top:15px;
+    height:30px;
+    vertical-align: middle;
+}
+
+#courseFilterDiv {
+    height : 80px;
+    width:280px;
+}
+
+.rankingYearAxisGroup > path {
+    display: none;
+}
+
+.coursePic
