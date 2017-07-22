@@ -1403,7 +1403,7 @@ function initialize_chart() {
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
     //$('#chart').height(chartHeight)
-    $('#chartSVG').css({'top' : $(window).height() - 400});
+    $('#chartSVG').css({'top' : '340px'});
     // add axis
     chartSVG.append("svg:g")
         .attr("transform", "translate(" + margin.left + "," + (chartHeight - margin.bottom) + ")")
