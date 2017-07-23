@@ -150,8 +150,9 @@ $(window).on("load", function() {
     var w = $(window).width();
     $("#main").height(h)
         .width(w);
-    load_all_rankings(all_rankings);
-
+    d3.queue(1)
+        .defer(load_all_rankings)
+        .defer(initialize_viz);
     generate_map();
 });
 $(document).ready(function() {
@@ -160,15 +161,26 @@ $(document).ready(function() {
     $('#tlyPageGuideToggles').css("left", help_x_pos);
 });
 
-
+function initialize_viz(callback) {
+    initialize_chart();
+    initialize_container_lists();
+    populate_ranking_matrix();
+    add_check_boxes();
+    initialize_publication_year_widget();
+    initialize_course_year_slider();
+    initialize_selectable()
+    refresh_map();
+    rightControlResize();
+    callback(null);
+}
 
 
 
 // function to load all rankings
 // populates 3 maps: course_map, architect_map and ranking_map
-function load_all_rankings(rankings) {
+function load_all_rankings(callback) {
     var ranking_index = 0;
-    rankings.forEach(function(d) {
+    all_rankings.forEach(function(d) {
         ranking_index++;
         var ranking_path = RANKINGS_PATH +  d;
         // parse out ranking_name from ranking_path
@@ -376,16 +388,9 @@ function load_all_rankings(rankings) {
                     chartTooltip = d3.select('body').append('div')
                         .attr('class', 'chartTooltip')
                         .style('opacity', 0)
+                    callback(null);
 
-                    initialize_chart();
-                    initialize_container_lists();
-                    populate_ranking_matrix();
-                    add_check_boxes();
-                    initialize_publication_year_widget();
-                    initialize_course_year_slider();
-                    initialize_selectable()
-                    refresh_map();
-                    rightControlResize();
+
                 })
             }
         })
